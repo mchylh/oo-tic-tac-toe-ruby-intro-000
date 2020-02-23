@@ -18,10 +18,10 @@ class TicTacToe
   [0,4,8], # left_diagonal
   [6,4,2] # right_diagonal
   ]
-  
+
   #build structure of the board
   puts board = ["  ","  ","  ","  ","  ","  ","  ","  ","  "]
-  
+
   #display_board method
   def display_board
      puts row = ["   " "|" "   " "|" "   "]
@@ -30,7 +30,7 @@ class TicTacToe
      puts separator
      puts row
    end
-  
+
   #board and position
   def display_board(board)
      puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -39,16 +39,16 @@ class TicTacToe
      puts "-----------"
      puts " #{board[6]} | #{board[7]} | #{board[8]} "
   end
-  
+
   #change player input in to integer
   def input_to_index(user_input)
     user_input.to_i - 1
   end
-  
+
   def move(board, index, marker)
    board[index] = marker
   end
-  
+
   def position_taken? (board, index)
     if board[index] == "" || board[index] == " " || board[index] == nil
       return false
@@ -56,7 +56,7 @@ class TicTacToe
       return true
     end
   end
-  
+
   def valid_move?(board, index)
     if !position_taken?(board, index) && (index).between?(0,8)
       return true
@@ -64,12 +64,12 @@ class TicTacToe
       return false
     end
   end
-  
+
   #define current player
   def current_player(board)
      turn_count(board) % 2 == 0 ? "X" : "O"
   end
-  
+
   #turn
   def turn(board)
     puts "Please enter 1-9:"
@@ -85,7 +85,7 @@ class TicTacToe
       turn(board)
     end
   end
-  
+
   #counts occupied positions
   def turn_count(board)
      counter = 0
@@ -96,7 +96,7 @@ class TicTacToe
      }
      counter
   end
-  
+
   #winning combo
   def won?(board)
       WIN_COMBINATIONS.each do |win_combination|
@@ -114,7 +114,7 @@ class TicTacToe
   end
   #position_1 == position_2 && position_2 == position_3 && position_taken?(board, win_index_1)
   #The above code means to return first element (position_1) & make sure the position is taken by X or O
-  
+
   def full?(board)
     if board.any? {|index| index == nil || index == " "}
       return false
@@ -122,7 +122,7 @@ class TicTacToe
       return true
     end
   end
-  
+
   def draw?(board)
      if !won?(board) && full?(board)
        return true
@@ -132,7 +132,7 @@ class TicTacToe
        return false
      end
   end
-  
+
   def over?(board)
     if draw?(board) || won?(board) || full?(board)
       return true
@@ -140,14 +140,14 @@ class TicTacToe
       return false
     end
   end
-  
+
   #determine the winner
   def winner(board)
      if won?(board)
         return board[won?(board)[0]]
      end
   end
-  
+
   #asks for players input on a turn of the game
   def play(board)
      counter = 0
@@ -156,7 +156,7 @@ class TicTacToe
        counter += 1
      end
   end
-  
+
   def play(board)
     until over?(board)
       turn(board)
@@ -168,4 +168,4 @@ class TicTacToe
       puts "Cat\'s Game!"
     end
   end
-end    
+end
