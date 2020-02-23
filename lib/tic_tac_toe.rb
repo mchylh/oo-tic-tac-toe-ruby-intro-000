@@ -88,7 +88,8 @@ class TicTacToe
     display_board
   end
 
-
+  #returns false for a draw
+  #returns the winning combo for a win
   def won?
     WIN_COMBINATIONS.detect do |combo|
       @board[combo[0]] == @board[combo[1]] &&
