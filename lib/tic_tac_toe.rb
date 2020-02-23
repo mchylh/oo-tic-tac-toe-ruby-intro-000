@@ -4,7 +4,6 @@ class TicTacToe
   def initialize
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
-
   # Define your WIN_COMBINATIONS constant
   #WIN_COMBINATIONS is a constant but it’s the parent array to our the children array.
   #parent_array => WIN_COMBINATIONS = [ children_arrays ]
@@ -169,4 +168,5 @@ class TicTacToe
       puts "Cat\'s Game!"
     end
   end
-end
+end  
+  
