@@ -98,6 +98,8 @@ class TicTacToe
     end
   end
 
+  #returns true for a draw
+  #returns false for an in-progress game
   def full?
     turn_count == 9
   end
