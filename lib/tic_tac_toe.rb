@@ -104,14 +104,23 @@ class TicTacToe
     turn_count == 9
   end
 
+  #returns true for a draw
+  #returns false for a won game
+  #returns false for an in-progress game
   def draw?
     !won? && full?
   end
 
+  #returns true for a draw
+  #returns true for a won game
+  #returns false for an in-progress game
   def over?
     won? || full? || draw?
   end
 
+  #return X when X won
+  #returns O when O won
+  #returns nil when no winner
   def winner
     won = ""
     if winner = won?
