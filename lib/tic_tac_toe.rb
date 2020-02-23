@@ -17,7 +17,7 @@ class TicTacToe
   [2,5,8], # right_column
   [0,4,8], # left_diagonal
   [6,4,2] # right_diagonal
-  ]
+]
 
   #build structure of the board
   #puts board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
