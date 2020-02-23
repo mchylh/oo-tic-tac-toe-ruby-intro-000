@@ -43,23 +43,13 @@ class TicTacToe
     @board[input] == "X" || @board[input] == "O"
   end
 
+  #returns true/false based on whether the position is already occupied
   def valid_move?(input)
+  #checks that the attempted move is within the bounds of the game board  
     input.between?(0, 8) && !position_taken?(input)
   end
 
-
-  def turn
-    puts "Choose a spot between 1-9"
-    spot = gets.strip
-    spot = input_to_index(spot)
-    if valid_move?(spot)
-      move(spot, current_player)
-    else
-      turn
-    end
-    display_board
-  end
-
+  #counts occupied positions
   def turn_count
     taken = 0
     @board.each do |i|
@@ -70,6 +60,8 @@ class TicTacToe
     return taken
   end
 
+  #returns the correct player, X, for the third move
+  #returns the correct player, O, for the fourth move
   def current_player
     player = nil
     if turn_count() % 2 == 0
@@ -78,6 +70,20 @@ class TicTacToe
       player = 'O'
     end
     return player
+  end
+
+  #receives user input via the gets method
+  def turn
+    puts "Choose a spot between 1-9"
+    spot = gets.strip
+    #calls #input_to_index, #valid_move?, and #current_player
+    spot = input_to_index(spot)
+    if valid_move?(spot)
+      move(spot, current_player)
+    else
+      turn
+    end
+    display_board
   end
 
 
