@@ -77,9 +77,10 @@ class TicTacToe
     puts "Choose a spot between 1-9"
     spot = gets.strip
     #calls #input_to_index, #valid_move?, and #current_player
+    #makes valid moves and displays the board
     spot = input_to_index(spot)
     if valid_move?(spot)
-      move(spot, current_player)
+      move(spot, current_player)  
     else
       turn
     end
