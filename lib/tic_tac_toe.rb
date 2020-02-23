@@ -45,7 +45,7 @@ class TicTacToe
 
   #returns true/false based on whether the position is already occupied
   def valid_move?(input)
-  #checks that the attempted move is within the bounds of the game board  
+  #checks that the attempted move is within the bounds of the game board
     input.between?(0, 8) && !position_taken?(input)
   end
 
