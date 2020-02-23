@@ -30,7 +30,7 @@ class TicTacToe
   #accepts the user's input (a string) as an argument
   def input_to_index(input)
   #converts the user's input (a string) into an integer
-  #converts the user's input from the user-friendly format (on a 1-9 scale) to the array-friendly format (where the first index starts at 0)  
+  #converts the user's input from the user-friendly format (on a 1-9 scale) to the array-friendly format (where the first index starts at 0)
     input.to_i - 1
   end
   #allows "X" player in the top left and "O" in the middle
