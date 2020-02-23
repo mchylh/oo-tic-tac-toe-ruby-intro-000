@@ -18,6 +18,7 @@ class TicTacToe
   [6, 4, 2]
 ]
 
+#prints arbitrary arrangements of the board
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts " ----------- "
@@ -26,14 +27,18 @@ class TicTacToe
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
+  #accepts the user's input (a string) as an argument
   def input_to_index(input)
+  #converts the user's input (a string) into an integer
+  #converts the user's input from the user-friendly format (on a 1-9 scale) to the array-friendly format (where the first index starts at 0)  
     input.to_i - 1
   end
-
+  #allows "X" player in the top left and "O" in the middle
   def move(position, token='X')
     @board[position] = token
   end
 
+  #returns true/false based on whether the position on the board is already occupied
   def position_taken?(input)
     @board[input] == "X" || @board[input] == "O"
   end
