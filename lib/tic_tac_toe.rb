@@ -78,6 +78,7 @@ class TicTacToe
     spot = gets.strip
     #calls #input_to_index, #valid_move?, and #current_player
     #makes valid moves and displays the board
+    #loop back spot/input if/else statement to ask for input again after a failed validation
     spot = input_to_index(spot)
     if valid_move?(spot)
       move(spot, current_player)
