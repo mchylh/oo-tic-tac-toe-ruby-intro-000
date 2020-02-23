@@ -1,3 +1,4 @@
+#initialize and assign an instance variable @board to an array with 9 blank spaces
 class TicTacToe
   attr_accessor :board
 
@@ -5,6 +6,7 @@ class TicTacToe
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
 
+#defines a constant WIN_COMBINATIONS with arrays for each win combination
   WIN_COMBINATIONS = [
   [0, 1, 2],
   [3, 4, 5],
@@ -12,8 +14,8 @@ class TicTacToe
   [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
-  [6, 4, 2],
-  [0, 4, 8]
+  [0, 4, 8],
+  [6, 4, 2]
 ]
 
   def display_board
