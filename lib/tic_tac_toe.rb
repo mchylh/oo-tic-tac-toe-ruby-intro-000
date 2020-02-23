@@ -20,7 +20,7 @@ class TicTacToe
   ]
 
   #build structure of the board
-  puts board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+  #puts board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
   #display_board method
   def display_board
