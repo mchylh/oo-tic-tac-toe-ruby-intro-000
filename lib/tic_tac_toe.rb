@@ -1,4 +1,9 @@
+class TicTacToe
+  attr_accessor :board
 
+  def initialize
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  end
 #WIN_COMBINATIONS is a constant but it’s the parent array to our the children array.
 #parent_array => WIN_COMBINATIONS = [ children_arrays ]
 #children_arrays => [0,1,2],[3,4,5],[6,7,8]...[6,4,2]
